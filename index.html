@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hemanth Vedantam - Portfolio</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+    <style>
+        /* Google Font */
+        body {
+            font-family: 'Josefin Sans', sans-serif;
+            font-weight: 400;
+            background-color: #f7f7fc;
+            color: #343a40;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Navbar */
+.navbar {
+    background-color: #ffffff;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.navbar:hover {
+    background-color: #f8f9fa;
+}
+
+.navbar-brand {
+    color: #3f396d;
+    font-size: 1.8rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.navbar-brand:hover {
+    color: #6f34fe;
+}
+
+.navbar-nav {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-nav a {
+    color: #343a40;
+    font-size: 1rem;
+    padding: 8px 15px;
+    text-decoration: none;
+    transition: color 0.3s, background-color 0.3s ease-in-out;
+    border-radius: 5px;
+}
+
+.navbar-nav a:hover {
+    color: white;
+    background-color: #6f34fe;
+}
+
+        
+        /* Home Section */
+        #home {
+            background: linear-gradient(135deg, rgba(111, 52, 254, 0.1) 0%, rgba(230, 230, 255, 1) 100%);
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+        }
+        #home h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: #3f396d;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        #home span {
+            color: #6f34fe;
+            text-shadow: 2px 2px 10px rgba(111, 52, 254, 0.2);
+        }
+        #home p {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #6c757d;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Section Headings */
+        section h2 {
+            color: #3f396d;
+            font-weight: bold;
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            position: relative;
+            display: inline-block;
+        }
+        section h2::after {
+            content: "";
+            display: block;
+            height: 4px;
+            width: 60px;
+            background: linear-gradient(135deg, rgba(200, 255, 220, 1) 0%, rgba(240, 255, 250, 1) 100%);
+            margin: 10px auto 0;
+        }
+        section p {
+            color: #6c757d;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+        
+        #expertise
+        {
+            background: linear-gradient(135deg, rgba(255, 220, 240, 1) 0%, rgba(230, 230, 255, 1) 100%);
+
+padding: 60px 0;
+border-top: 5px solid #4a90e2;
+clip-path: polygon(0 0, 100% 12%, 100% 100%, 0 88%);
+
+        }
+        /* Circular Progress */
+        .circular-progress {
+            position: relative;
+            height: 130px;
+            width: 130px;
+            border-radius: 50%;
+            background: conic-gradient(#7d2ae8 0%, #ededed 0deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px auto;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 3px solid rgba(111, 52, 254, 0.3);
+        }
+        .circular-progress::before {
+            content: "";
+            position: absolute;
+            height: 120px;
+            width: 120px;
+            border-radius: 50%;
+            background-color: white;
+        }
+        .circular-progress:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.3);
+        }
+        .progress-value {
+            position: relative;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #3f396d;
+        }
+        
+        #projects
+        {
+            background: linear-gradient(135deg, rgba(218, 139, 255, 0.1) 0%, rgba(255, 235, 221, 1) 100%);
+            padding: 80px 0;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+        }
+        /* Certification Section */
+        #certifications {
+            background: linear-gradient(135deg, rgba(255, 200, 220, 1) 0%, rgba(244, 244, 248, 1) 100%);
+            padding: 60px 0;
+            border-top: 5px solid #6f34fe;
+            clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
+        }
+        
+        #certifications h2 {
+            color: #3f396d;
+            font-weight: bold;
+            font-size: 2.5rem;
+        }
+        
+        #certifications .col-md-6 {
+            margin-bottom: 20px;
+        }
+        
+        #certifications h4 {
+            color: #3f396d;
+            font-weight: bold;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+        }
+        
+        #certifications p {
+            color: #6c757d;
+            font-size: 1rem;
+        }
+        #experience
+        {
+            background: linear-gradient(135deg, rgba(173, 52, 254, 0.1) 0%, rgba(255, 204, 255, 1) 100%);
+
+padding: 60px 0;
+border-top: 5px solid #3cb371;
+clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 85%);
+
+        }
+/* Chatbot container */
+.chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    height: 400px;
+    background-color: #ffffff;
+    border: 2px solid #000;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: none; /* Initially hidden */
+}
+
+/* Header with AI name and image */
+.chatbot-header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.chatbot-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.chatbot-name {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Chatbot body */
+.chatbot-body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 10px;
+}
+
+.chatbot-messages {
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-bottom: 10px;
+}
+
+.chatbot-input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+.chatbot-send-btn {
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.chatbot-send-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Chat Icon */
+.chat-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007BFF;
+    border-radius: 50%;
+    padding: 15px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.chat-icon-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Chat Icon hover effect */
+.chat-icon:hover {
+    background-color: #0056b3;
+}
+
+        .profile-img {
+    position: absolute;
+    top: 20px;  /* Adjust distance from the top of the page */
+    left: 20px;  /* Adjust distance from the left corner */
+    width: 200px;  /* Increased size of the image */
+    height: 200px;  /* Increased size of the image */
+    border-radius: 50%;  /* Makes the image circular */
+    object-fit: cover;  /* Ensures the image fills the circle without distortion */
+}
+
+.resume-button-container {
+    position: fixed; /* Keeps the button fixed while scrolling */
+    top: 50%; /* Vertically centered */
+    right: 20px; /* Adjust distance from the right edge */
+    transform: translateY(-50%); /* Aligns the button perfectly center */
+    z-index: 1000; /* Ensures the button stays above other elements */
+}
+
+.resume-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #6F34FE; /* Matches your theme's purple */
+    color: #FFFFFF; /* White text for contrast */
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    text-align: center;
+    text-decoration: none; /* Removes underline */
+    box-shadow: 0px 4px 8px rgba(111, 52, 254, 0.3); /* Adds depth */
+    transition: all 0.3s ease; /* Smooth hover effect */
+}
+
+.resume-button:hover {
+    background-color: #4A1FAA; /* Darker purple on hover */
+    box-shadow: 0px 6px 12px rgba(74, 31, 170, 0.4); /* Intense shadow */
+    transform: scale(1.05); /* Slightly enlarges button */
+}
+
+
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, rgba(255, 230, 230, 0.3) 0%, rgba(247, 247, 252, 1) 100%);
+            padding: 60px 0;
+    clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+        }
+        footer a {
+            color: #fca61f;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+        footer a:hover {
+            color: #6f34fe;
+        }
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+        
+        /* Floating Hover Effect */
+        .card, .col-md-6, .btn, .circular-progress, section {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover, .col-md-6:hover, .btn:hover, .circular-progress:hover, section:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.2);
+        }
+ /* Contact Section Styles */
+#contact .row {
+    margin-top: 20px;
+}
+
+#contact i {
+    font-size: 24px;
+    color: #4A90E2;
+    margin-bottom: 10px;
+}
+
+/* Links Styling for LinkedIn and GitHub */
+#contact a {
+    text-decoration: none;
+    color: #4A90E2;
+    font-weight: bold;
+}
+
+#contact a:hover {
+    color: #357ABD; /* Darker blue on hover */
+}
+
+/* "Send an Email" Button Styling */
+.contact-actions {
+    text-align: right; /* Align to the right side */
+    margin-top: 20px;
+}
+
+.contact-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 24px;
+    background-color: #4A90E2;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.contact-button:hover {
+    background-color: #357ABD;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+}
+
+/* Icon Styling inside the Button */
+.contact-button i {
+    margin-right: 8px; /* Space between the icon and the text */
+    font-size: 18px; /* Adjust icon size */
+}
+
+
+        .chain-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.chain-animation svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: moveDiagonal 20s linear infinite;
+    opacity: 0.7;
+}
+
+/* Keyframes for Chain Movement */
+@keyframes moveDiagonal {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(0%, 0%) rotate(360deg);
+    }
+}
+
+.chain-animation circle {
+    fill: none;
+    stroke: #6f34fe;
+    stroke-width: 2;
+    animation: pulse 5s infinite ease-in-out;
+}
+
+/* Pulsing Effect */
+@keyframes pulse {
+    0%, 100% {
+        stroke-width: 2;
+    }
+    50% {
+        stroke-width: 5;
+    }
+}
+</style>
+
+        
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+        <div class="container-fluid px-5">
+            <a class="navbar-brand fw-bold fs-2" href="#">Hemanth Vedantam</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav gap-4">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#expertise">Expertise</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="py-5 text-center">
+        <div class="container">
+            <h1>Hello! I am <span class="text-primary">Hemanth Vedantam</span></h1>
+            <p class="text-muted">AI Engineer specializing in Artificial Intelligence, Python Programming, and Machine Learning.</p>
+            <img src="profilenew.jpg" alt="Hemanth Vedantam" class="profile-img" >
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section id="expertise" class="py-5 bg-light">
+        <div class="container text-center">
+            <h2>My Expertise</h2>
+            <p class="text-muted">Areas where I excel:</p>
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <h4>Data Analytics</h4>
+                </div>
+                <div class="col-md-4">
+                    <h4>Machine Learning</h4>
+                </div>
+                <div class="col-md-4">
+                    <h4>Natural Language Processing</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-5">
+        <div class="container text-center">
+            <h2>Skills</h2>
+            <p>Proficient in programming languages like Python, Java, and C, with expertise in libraries and frameworks like TensorFlow, PyTorch, and Scikit-learn.</p>
+            <div class="row mt-4">
+                <div class="col-md-3">
+                    <div class="circular-progress python">
+                        <span class="progress-value python-progress">90%</span>
+                    </div>
+                    <p>Python</p>
+                </div>
+                <div class="col-md-3">
+                    <div class="circular-progress ml">
+                        <span class="progress-value ml-progress">80%</span>
+                    </div>
+                    <p>Machine Learning</p>
+                </div>
+                <div class="col-md-3">
+                    <div class="circular-progress da">
+                        <span class="progress-value da-progress">75%</span>
+                    </div>
+                    <p>Data Analytics</p>
+                </div>
+                <div class="col-md-3">
+                    <div class="circular-progress cc">
+                        <span class="progress-value cc-progress">85%</span>
+                    </div>
+                    <p>Cloud Computing</p>
+                </div>
+                <div class="col-md-3">
+                    <div class="circular-progress df">
+                        <span class="progress-value df-progress">80%</span>
+                    </div>
+                    <p>Django Framework</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="projects" class="py-5 bg-light">
+        <div class="container text-center">
+            <h2>Projects</h2>
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <h4>AI Assistant</h4>
+                    <p>Developed using NLTK for natural language understanding.</p>
+                </div>
+                <div class="col-md-6">
+                    <h4>Movie Recommendation System</h4>
+                    <p>Built with Scikit-learn to recommend movies based on user preferences.</p>
+                </div>
+                <div class="col-md-6">
+                    <h4>Credit Card Fraud Detection</h4>
+                    <p>Used machine learning algorithms to identify fraudulent transactions.</p>
+                </div>
+                <div class="col-md-6">
+                    <h4>Weather Predictor</h4>
+                    <p>Built using Python to provide real-time weather updates.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certification Section -->
+<section id="certifications" class="py-5">
+    <div class="container text-center">
+        <h2>Certifications</h2>
+        <p class="text-muted">Some certifications I've earned:</p>
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <h4>AWS Cloud Practitioner</h4>
+                <p>Certified in AWS Cloud Fundamentals (CLF-C02).</p>
+            </div>
+            <div class="col-md-6">
+                <h4>Data Visualization with Python</h4>
+                <p>Certification from IBM</p>
+            </div>
+            <div class="col-md-6">
+                <h4>Machine Learning</h4>
+                <p>Certified by Kaggle</p>
+            </div>
+            <div class="col-md-6">
+                <h4>Advanced Python Programming</h4>
+                <p>Certification from Cisco</p>
+            </div>
+            <div class="col-md-6">
+                <h4>EX183 Certified</h4>
+                <p>Certification from RedHat</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-5">
+        <div class="container text-center">
+            <h2>Experience</h2>
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <h4>AI Engineer Intern</h4>
+                    <p><strong>Teachnook, Bangalore</strong> (Jun 2024 - Jul 2024)</p>
+                    <p>Designed and deployed cutting-edge AI models, leading to transformative solutions.</p>
+                </div>
+                <div class="col-md-6">
+                    <h4>AI & ML Intern</h4>
+                    <p><strong>Geeksmetrics, Bangalore</strong> (Jul 2024 - Present)</p>
+                    <p>Led sentiment analysis projects and developed AI-driven decision-making tools.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container text-center">
+            <h2>Contact Me</h2>
+            <p>Feel free to reach out via the following:</p>
+            
+            <!-- Contact Details Section -->
+            <div class="row mt-4">
+                <div class="col-md-3">
+                    <i class="bi bi-telephone-fill"></i>
+                    <p>+91 8919320565</p>
+                </div>
+                <div class="col-md-3">
+                    <i class="bi bi-envelope-fill"></i>
+                    <p>hemanthvedantam@gmail.com</p>
+                </div>
+                <div class="col-md-3">
+                    <i class="bi bi-linkedin"></i>
+                    <a href="https://www.linkedin.com/in/hemanth-vedantam-813455280/" target="_blank">LinkedIn</a>
+                </div>
+                <div class="col-md-3">
+                    <i class="bi bi-github"></i>
+                    <a href="https://github.com/Hemanthvedantam" target="_blank">GitHub</a>
+                </div>
+            </div>
+    
+            <!-- "Send an Email" Button within Contact Section -->
+            <div class="contact-actions mt-4">
+                <a href="mailto:hemanthvedantam@gmail.com" class="contact-button">
+                    <i class="bi bi-envelope-fill"></i> Send an Email
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    
+    <div class="chain-animation">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 2000">
+            <!-- Outer Circles -->
+            <circle cx="500" cy="500" r="400"></circle>
+            <circle cx="1500" cy="500" r="400"></circle>
+            <circle cx="1000" cy="1500" r="400"></circle>
+            <!-- Inner Circles -->
+            <circle cx="1000" cy="1000" r="200"></circle>
+            <circle cx="500" cy="1500" r="200"></circle>
+            <circle cx="1500" cy="1500" r="200"></circle>
+        </svg>
+    </div>
+    <div class="resume-button-container">
+        <a href="Resume Mine Updated.pdf" target="_blank" class="resume-button">Get Resume</a>
+    </div>
+    <!-- Chat Icon -->
+<div class="chat-icon" onclick="toggleChat()">
+    <img src="bot.jpg" alt="Jarvis Icon" class="chat-icon-img">
+</div>
+
+<!-- Chatbot -->
+<div class="chatbot-container" id="chatbotContainer">
+    <div class="chatbot-header">
+        <img src="bot.jpg" alt="Jarvis" class="chatbot-img">
+        <span class="chatbot-name">Jarvis</span>
+    </div>
+    <div class="chatbot-body">
+        <div class="chatbot-messages"></div>
+        <input type="text" class="chatbot-input" placeholder="Ask me anything...">
+        <button class="chatbot-send-btn">Send</button>
+    </div>
+</div>
+
+    
+    <!-- Footer -->
+    <footer class="py-4 bg-dark text-white text-center">
+        <p>&copy; 2024 Hemanth Vedantam. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script>
+        function createCircularProgress(selector, endValue, color) {
+            const progress = document.querySelector(selector);
+            const value = progress.querySelector(".progress-value");
+            let startValue = 0;
+    
+            const interval = setInterval(() => {
+                startValue++;
+                value.textContent = `${startValue}%`;  // Fixed the string interpolation here
+                progress.style.background = `conic-gradient(${color} ${startValue * 3.6}deg, #ededed 0deg)`;  // Fixed the string interpolation here
+                if (startValue === endValue) clearInterval(interval);
+            }, 20);
+        }
+    
+        createCircularProgress(".python", 90, "#7d2ae8");
+        createCircularProgress(".ml", 80, "#3f396d");
+        createCircularProgress(".da", 80, "#6f34fe");
+        createCircularProgress(".cc", 85, "#fca61f");
+        createCircularProgress(".df", 80, "#211e39");
+        const sendButton = document.querySelector('.chatbot-send-btn');
+    const inputField = document.querySelector('.chatbot-input');
+    const messagesContainer = document.querySelector('.chatbot-messages');
+
+    // Function to add a message to the chat
+    function addMessage(message, sender) {
+        const messageElement = document.createElement('div');
+        messageElement.classList.add('chat-message', sender);
+        messageElement.textContent = message;
+        messagesContainer.appendChild(messageElement);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
+
+    const chatbotContainer = document.getElementById('chatbotContainer');
+
+    // Function to toggle the visibility of the chatbot
+    function toggleChat() {
+        if (chatbotContainer.style.display === 'none' || chatbotContainer.style.display === '') {
+            chatbotContainer.style.display = 'block'; // Show the chatbox
+        } else {
+            chatbotContainer.style.display = 'none'; // Hide the chatbox
+        }
+    }
+
+    // Handle sending messages
+    
+
+    // Function to add messages to the chatbox
+    function addMessage(message, sender) {
+        const messageElement = document.createElement('div');
+        messageElement.classList.add('chat-message', sender);
+        messageElement.textContent = message;
+        messagesContainer.appendChild(messageElement);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
+
+    // Predefined responses
+    const responses = {
+    "hi": "Hello! How can I assist you today?",
+    "hello": "Hi there! How can I help?",
+    "how are you": "I'm just a bot, but I'm doing great! How about you?",
+    "what is your name": "I am Jarvis, your personal assistant!",
+    "who are you": "I am Jarvis, created to assist you with tasks and answer your questions.",
+    "help": "Sure! I can help with anything you're curious about. Just ask!",
+    "bye": "Goodbye! Feel free to ask me anything whenever you need.",
+    "thank you": "You're welcome! I'm here if you need anything else.",
+    "what do you do": "I'm here to answer your questions and assist with tasks. Just ask me anything!",
+    "tell me about you": "I am Jarvis, created by a tech enthusiast, Vedantam Hemanth, who specializes in Artificial Intelligence and innovative technologies.",
+    "where are you from": "I don't have a physical location, but I exist in the cloud to assist you!",
+    "what is your favorite color": "I don't have preferences, but I know that blue is a favorite for many!",
+    "what are your interests": "I like to explore AI, machine learning, and new technologies!",
+    "what do you work on": "I work on helping you with various tasks and answering your questions. I am always learning!",
+    "what are your skills": "I am designed by Vedantam Hemanth, who has expertise in Machine Learning, Artificial Intelligence, Natural Language Processing, Python, Java, and data visualization with tools like Matplotlib and Seaborn.",
+    "what projects have you done": "I represent Vedantam Hemanth, who has completed projects like Sentiment Analysis, a Movie Recommendation System, Credit Card Fraud Detection, Weather Prediction, OTP Verifier, and a Text Translator.",
+    "what certifications do you have": "Hemanth has certifications like AWS Cloud Practitioner, Data Visualization with Python, Oracle AI, and Automation Anywhere, among others.",
+    "what is your education": "Vedantam Hemanth is pursuing a B.Tech in Computer Science with Honors in Artificial Intelligence at KL University, with a CGPA of 9.4.",
+    "default": "Sorry, I didn't understand that. Can you ask something else?"
+};
+
+    // Function to handle user input and respond accordingly
+    function getResponse(userMessage) {
+        userMessage = userMessage.toLowerCase().trim();
+
+        // If the message matches any of the predefined responses, return it, else return a default response
+        if (responses[userMessage]) {
+            return responses[userMessage];
+        } else {
+            return responses["default"];
+        }
+    }
+
+    sendButton.addEventListener('click', () => {
+        const userMessage = inputField.value;
+        if (userMessage.trim()) {
+            addMessage(userMessage, 'user');
+            inputField.value = ''; // Clear the input field
+
+            // Simulate a response from Jarvis after a short delay
+            setTimeout(() => {
+                const botResponse = getResponse(userMessage);
+                addMessage(botResponse, 'jarvis');
+            }, 1000);
+        }
+    });
+
+    // Allow sending message with the Enter key
+    inputField.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            sendButton.click();
+        }
+    });
+    </script>
+    
+</body>
+</html>
